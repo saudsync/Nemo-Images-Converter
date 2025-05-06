@@ -2,37 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nemo Image Converter Tool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>Nemo Image Converter</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>Image Converter</h1>
-    <input type="file" id="imageInput" accept="image/*" />
-    
-    <div class="options">
-      <label for="format">Format:</label>
-      <select id="format">
-        <option value="png">PNG</option>
-        <option value="jpeg">JPEG</option>
-        <option value="jpg">JPG</option>
-        <option value="webp">WEBP</option>
-      </select>
-
-      <label for="width">Width (px):</label>
-      <input type="number" id="width" placeholder="Optional" />
-
-      <label for="height">Height (px):</label>
-      <input type="number" id="height" placeholder="Optional" />
-
-      <button onclick="convertImage()">Convert</button>
+  <!-- Header -->
+  <header>
+    <div class="nav">
+      <h2 class="logo">ImageConvertX</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <canvas id="canvas" style="display: none;"></canvas>
-
-    <div id="downloadLinkContainer"></div>
+  <!-- Abstract background blob -->
+  <div class="background-blobs">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
   </div>
+
+  <!-- Main Container -->
+  <main>
+    <section class="converter-section">
+      <h1>Convert & Resize Images Effortlessly</h1>
+      <p class="subtitle">Upload an image, choose your format and size, and get your new file instantly.</p>
+
+      <div class="upload-box">
+        <input type="file" id="imageInput" accept="image/*">
+      </div>
+
+      <div class="options">
+        <div class="option-group">
+          <label for="format">Convert to format</label>
+          <select id="format">
+            <option value="png">PNG</option>
+            <option value="jpeg">JPEG</option>
+            <option value="jpg">JPG</option>
+            <option value="webp">WEBP</option>
+          </select>
+        </div>
+
+        <div class="option-group">
+          <label for="width">Width (px)</label>
+          <input type="number" id="width" placeholder="Auto">
+        </div>
+
+        <div class="option-group">
+          <label for="height">Height (px)</label>
+          <input type="number" id="height" placeholder="Auto">
+        </div>
+      </div>
+
+      <button class="convert-btn" onclick="convertImage()">Convert Image</button>
+
+      <canvas id="canvas" style="display: none;"></canvas>
+
+      <div id="downloadLinkContainer" class="download-section"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ImageConvertX. All rights reserved. | Built with passion by Saud</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
