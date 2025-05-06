@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nemo Image Converter Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Image Converter</h1>
+    <input type="file" id="imageInput" accept="image/*" />
+    
+    <div class="options">
+      <label for="format">Format:</label>
+      <select id="format">
+        <option value="png">PNG</option>
+        <option value="jpeg">JPEG</option>
+        <option value="jpg">JPG</option>
+        <option value="webp">WEBP</option>
+      </select>
+
+      <label for="width">Width (px):</label>
+      <input type="number" id="width" placeholder="Optional" />
+
+      <label for="height">Height (px):</label>
+      <input type="number" id="height" placeholder="Optional" />
+
+      <button onclick="convertImage()">Convert</button>
+    </div>
+
+    <canvas id="canvas" style="display: none;"></canvas>
+
+    <div id="downloadLinkContainer"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
